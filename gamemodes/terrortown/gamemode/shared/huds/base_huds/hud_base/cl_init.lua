@@ -317,6 +317,8 @@ function HUD:DrawElemAndChildren(elem)
         return
     end
 
+    elem:Draw()
+
     local children = elem:GetChildren()
 
     for i = 1, #children do
@@ -331,8 +333,6 @@ function HUD:DrawElemAndChildren(elem)
 
         self:DrawElemAndChildren(child)
     end
-
-    elem:Draw()
 
     if HUDEditor then
         HUDEditor.DrawElem(elem)
